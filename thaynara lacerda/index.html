@@ -17,9 +17,19 @@
 <p>Por: Thaynara Lacerda</p>
 <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar dicas de programação e curiosidades da área de tecnologia, com a professora marcia estou aprendendo programacao e estou criando esse site para mostrar meu aprendizado!.</p>
 <p>O mundo da tecnologia esconde histórias surpreendentes: o primeiro mouse era de madeira, o e-mail foi criado antes da internet comercial, o nome "Bluetooth" homenageia um rei viking, o mascote do Firefox é um panda-vermelho e a primeira webcam servia apenas para vigiar uma garrafa de café</p>
-</main>.passo.ativo {
-    
+</main>.passo.ativo {  
 }
+const avanca = document.querySelectorAll('.btn-proximo');
+
+avanca.forEach(button => {
+    button.addEventListener('click', function(){
+        const atual = document.querySelector('.ativo');
+        const proximoPasso = 'passo-' + this.getAttribute('data-proximo');
+
+        atual.classList.remove('ativo');
+        document.getElementById(proximoPasso).classList.add('ativo');
+    })
+})
 <div class="passo ativo" id="passo-0">
         <img src="cenario-passo0.png" alt="">
         <p>Um dia desses, dentro de um livro da biblioteca da escola, eu descobri uma carta antiga sobre uma cidade perdida, escondida por riquezas e belezas naturais. Nessa carta, a autora deixa algumas pistas para encontrar essa cidade e eu decidi segui-las!</p>
